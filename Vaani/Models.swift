@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-enum MemoryCategory: String, CaseIterable, Identifiable {
+enum MemoryCategory: String, CaseIterable, Identifiable, Sendable {
     case story = "Story"
     case recipe = "Recipe"
     case song = "Song"
@@ -31,7 +31,7 @@ enum MemoryCategory: String, CaseIterable, Identifiable {
     }
 }
 
-struct MemoryCard: Identifiable, Equatable {
+struct MemoryCard: Identifiable, Equatable, Sendable {
     let id = UUID()
     let title: String
     let speaker: String
@@ -51,14 +51,22 @@ struct MemoryCard: Identifiable, Equatable {
     }
 }
 
-struct ConversationPrompt: Identifiable, Equatable {
+struct ConversationPrompt: Identifiable, Equatable, Sendable {
     let id = UUID()
     let title: String
     let question: String
     let category: MemoryCategory
 }
 
-enum DemoData {
+enum SpeechState: Equatable {
+    case idle
+    case requestingPermission
+    case listening
+    case unavailable
+    case finished
+}
+
+enum SampleData {
     static let prompts: [ConversationPrompt] = [
         ConversationPrompt(
             title: "Childhood Home",

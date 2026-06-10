@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Vaani uses speech recognition to turn family voice memories into private cards.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Vaani uses the microphone to record a family member speaking a memory.</string>
+</dict>
+</plist>
